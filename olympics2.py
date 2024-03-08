@@ -201,6 +201,15 @@ if selected_value == 'Athlete-wise Analyis':
     ax = sns.scatterplot(data = dataset4, x = 'Weight', y = 'Height', hue = 'Medal', style = 'Sex')
 
     st.pyplot(fig)
+    st.subheader("Male-Female data over years")
+    dataset5 = helper.male_female_distribution(df1)
+    fig3 = px.line(dataset5, x="Year", y=["F", "M"])
+    fig3.update_layout(width=800, height=600)
+    st.plotly_chart(fig3)
+
+
+
+
 
 
 

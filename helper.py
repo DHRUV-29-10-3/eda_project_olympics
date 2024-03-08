@@ -134,4 +134,9 @@ def weight_height_distribution(df,sport):
     return data1
 
 
+def male_female_distribution(dataset):
+    data = dataset.drop_duplicates(subset=['Name', 'Year'])
+    data2 = data.groupby('Year')['Sex'].value_counts().reset_index()
+    f_m_data = pd.pivot_table(data2, values='count', index='Year', columns='Sex', aggfunc='sum').reset_index()
 
+    return f_m_data
