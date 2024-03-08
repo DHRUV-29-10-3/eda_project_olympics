@@ -208,6 +208,9 @@ if selected_value == 'Athlete-wise Analyis':
     st.plotly_chart(fig3)
 
 
+    """completed"""
+
+
 
 
 
